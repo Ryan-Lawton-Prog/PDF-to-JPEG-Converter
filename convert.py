@@ -10,6 +10,7 @@ popplerPath = os.path.dirname(os.path.realpath(__file__))+"\\dependencies\\poppl
 onlyfiles = [f for f in listdir(pdfPath) if isfile(join(pdfPath, f))]
     
 for i in onlyfiles:
+    if i == ".gitignore": continue
     print(pdfPath+"\\"+i)
     pages = convert_from_path("PDF\\"+i, 500, poppler_path=popplerPath)
     
